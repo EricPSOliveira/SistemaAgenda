@@ -1,0 +1,39 @@
+@media screen and (max-width: 900px) {
+  .container {
+    width: 95vw;
+    height: 90vh;
+    background: rgba(226, 20, 174, 0);
+    /* background: linear-gradient(
+      135deg,
+      rgba(92, 29, 208, 0.582)1%,
+      rgba(2, 0, 36, 0.308) 47%,
+      rgba(226, 20, 175, 1) 100%
+    ); */
+    margin: 0 auto;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login {
+    /* background: rgba(226, 20, 174, 0.466); */
+    background: rgb(226, 20, 175);
+    background: linear-gradient(
+      35deg,
+      rgba(226, 20, 174, 0.445) 1%,
+      rgba(2, 0, 36, 0.548) 47%,
+      rgba(92, 29, 208, 0.336) 100%
+    );
+    border-radius: 30px;
+    width: 95%;
+    height: 55%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nopassword{
+    width: 80vw;
+  }
+}

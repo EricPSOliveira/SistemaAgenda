@@ -1,0 +1,142 @@
+.creater{
+  background-color: rgba(0, 0, 0, 0.616);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  
+} 
+#criar{
+  position: relative;
+  background-color: white;
+  border-radius: 25px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  width: 40vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;  
+  gap: 2rem;
+}
+.nme{
+  background-color: rgb(255, 255, 255);
+ 
+
+  width: 70%;
+  height: 6vh;
+  transition: 0.4s;
+  cursor: text;
+}
+
+  
+
+#criar input{
+display: block;
+width: 100%;
+height: 100%;
+position: relative;
+background-color: rgba(44, 211, 214, 0);
+padding-left: 1.2rem;
+color: black;
+font-size: 1rem;
+
+cursor: text;
+}
+
+#criar label{
+  position: absolute; 
+  color: rgba(0, 0, 0, 0.575);
+  z-index: 5;
+  margin-left: 1rem;
+
+  transform: translateY(-200%);
+  transition: 0.3s;
+  
+  cursor: text;
+  text-align: start;
+
+
+  background-color: rgba(255, 0, 0, 0);
+
+}
+
+#criar input:focus + label, #criar input:valid + label{
+  font-size: 0.8rem;
+  transform: translateY(-360%);
+  color: var(--input-default);
+}
+
+.nme::after{
+  content: ' ';
+  width: 0%;
+  
+  height: 1px;
+  background-color: var(--input-default);
+  left:6%;
+  position: absolute;
+  transition: 0.5s;
+}
+.nme input{
+  color: rgb(112, 112, 112);
+  font-family: 'poppins';
+}
+
+
+
+.data_input{
+  margin-left: 3rem;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+.data_input:focus, .data_input:valid{
+  margin-left: 0;
+}
+
+.nme.valid::after{
+  content: ' ';
+  width: 88%;
+  
+  height: 1px;
+  background-color: var(--input-default);
+  left:6%;
+  position: absolute;
+  transition: 0.5s;
+}
+#criar .nme:hover::after, #criar .nme input:focus ~ .nme::after {
+  width: 88%;
+}
+
+.submit{
+  align-self: flex-end;
+  width: 30%;
+  height: 5vh;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.submit input{
+  cursor: pointer;
+}
+.submit:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.submit:active{
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+
+
+.pointer{
+  cursor: pointer;
+}

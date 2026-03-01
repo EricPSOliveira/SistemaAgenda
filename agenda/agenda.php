@@ -1,0 +1,255 @@
+<?php include './php/conexao.php';
+
+
+
+if (isset($_POST['name_input']) && isset($_POST['data_input']) && isset($_POST['proc_input']) && isset($_POST['cel_input'])) {
+  $name = $conn->real_escape_string($_POST['name_input']);
+  $data = $conn->real_escape_string($_POST['data_input']);
+  $proc = $conn->real_escape_string($_POST['proc_input']);
+  $cel = $conn->real_escape_string($_POST['cel_input']);
+
+
+  $entrar = $conn->query("INSERT INTO agenda (name, data, proc, cel) VALUES ('$name', '$data', '$proc', '$cel')");
+  echo '<script>window.alert("deu certo"); console.log("deu certo")</script>';
+  header("Location: ./index.php");
+}
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link href="  https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel=" stylesheet">
+
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/root.css">
+  <link rel="stylesheet" href="./styles/aside.css">
+  <link rel="stylesheet" href="./styles/agenda_em_si.css">
+  <link rel="stylesheet" href="./styles/create.css">
+  <link rel="stylesheet" href="./styles/filter.css">
+  <link rel="stylesheet" href="./styles/search.css">
+  <title>Agenda</title>
+</head>
+
+<body>
+
+  <aside>
+    <div class="w">
+      <div class="slogan">
+
+      </div>
+      <div class="sector">
+        <div class="create">
+          <div class="crate">
+            <i class="bx bxs-plus-square"></i>
+            <p> Create</p>
+          </div>
+        </div>
+        <div class="filter">
+          <div class="filer">
+            <i class="bx bx-menu"></i>
+            <p>Filter</p>
+          </div>
+        </div>
+        <div class="pesquisar">
+          <i class="bx bx-search" id="menu_search"></i>
+        </div>
+        <div class="sair">
+          <div class="quit">
+            <p>Sair</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="container">
+    <div class="container_sector">
+      <?php
+      if (isset($_GET['nome']) && !empty($_GET['nome'])) {
+        if ($_GET['nome'] == 'nome') {
+          $itens = $conn->query("SELECT * FROM agenda ORDER BY name ASC ");
+        } elseif ($_GET['nome'] == 'data') {
+          $itens = $conn->query("SELECT * FROM agenda ORDER BY data ASC ");
+        } elseif ($_GET['nome'] == 'proc') {
+          $itens = $conn->query("SELECT * FROM agenda ORDER BY proc ASC ");
+        }
+      } else {
+        $itens = $conn->query("SELECT * FROM agenda ORDER BY data ASC ");
+      }
+
+
+
+      if ($itens->num_rows > 0) {
+        while ($jen = $itens->fetch_assoc()) {
+          $name = $jen['name'];
+          $data =  $jen['data'];
+          $formatar = date('d/m/Y', strtotime($data));
+          $proc = $jen['proc'];
+          $cel = $jen['cel'];
+      ?>
+
+
+
+
+
+
+
+          <div class="elemento">
+            <div class="delete">
+              X
+            </div>
+            <div class="inside_content">
+              <div class="name">
+                <p><?php echo $name; ?></p>
+              </div>
+
+              <div class="data">
+                <p><?php echo $formatar; ?></p>
+              </div>
+
+              <div class="procedimento">
+                <p><?php echo $proc; ?></p>
+              </div>
+
+              <div class="tel">
+                <p><?php echo $cel ?></p>
+              </div>
+
+            </div>
+          </div>
+
+      <?php }
+      } ?>
+    </div>
+  </div>
+
+  <div class="filtter">
+    <div class="namer"><a href="index.php?nome=nome">Nome</a></div>
+    <div class="dater"><a href="index.php?nome=data">Data</a></div>
+    <div class="procquer"><a href="index.php?nome=proc">Procedimento</a></div>
+  </div>
+  <div class="creater">
+    <div class="form">
+      <form method="post" id="criar">
+        <div class="nme">
+
+          <input type="text" class="name_input" name="name_input" title="name" id="nme"
+            required>
+          <label for="nme">Nome</label>
+        </div>
+        <div class="nme">
+
+          <input type="date" class="data_input" name="data_input" title="name" id="data"
+            required>
+          <label for="data">Data</label>
+        </div>
+        <div class="nme">
+
+          <input type="text" class="proc_input" name="proc_input" title="name" id="proc"
+            required>
+          <label for="proc">Procedimento</label>
+        </div>
+        <div class="nme">
+
+          <input type="tel" class="cel_input" name="cel_input" maxlength="15" title="name"
+            id="cel" required>
+          <label for="cel">Numero de Celular</label>
+        </div>
+
+        <div class="submit">
+          <input type="submit" class="pointer">
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="search">
+    <div class="search_tool">
+      <form class="search_tool2" id="searchForm">
+
+        <input type="text" class="S_tool" id="S_tool" name="search" title="Search_tool" placeholder="Pesquisar" value="">
+        <button class="submitter" title="submitter" type="submit"><i
+            class="bx bx-search" id="submitter"></i></button>
+      </form>
+
+    </div>
+    <div class="results">
+      <?php
+
+      include './php/conexao.php';
+
+      if (isset($_GET['search']) && !empty($_GET['search'])) {
+        echo "<script>alert('Nenhum resultado encontrado para: ');</script>";
+
+        $valor = $_GET['search'];
+        $valor = trim($valor);
+        $valor = mysqli_real_escape_string($conn, $valor);
+
+        echo $valor;
+        $iten = $conn->query("SELECT * FROM agenda WHERE name LIKE '%$valor%'");
+
+        if ($iten->num_rows > 0) {
+          while ($jn = $iten->fetch_assoc()) {
+            $nme = $jn['name'];
+            $dta =  $jn['data'];
+            $formtar = date('d/m/Y', strtotime($dta));
+            $prc = $jn['proc'];
+            $cl = $jn['cel'];
+      ?>
+
+
+
+
+            <div class="elementor">
+              <div class="inside_contenter">
+                <div class="name">
+                  <p><?php echo $nme ?></p>
+                </div>
+
+                <div class="data">
+                  <p><?php echo $formtar ?></p>
+                </div>
+
+                <div class="procedimento">
+                  <p><?php echo $prc ?></p>
+                </div>
+
+                <div class="tel">
+                  <p><?php echo $cl ?></p>
+                </div>
+
+              </div>
+            </div>
+      <?php
+          }
+        }
+      }
+      ?>
+
+    </div>
+  </div>
+
+  <script src="./scripts/valid.js" defer></script>
+  <script src="./scripts/telephone.js" defer></script>
+  <script src="./scripts/modais.js" defer></script>
+  <script src="./scripts/search.js"></script>
+  <script src="./scripts/filter.js" defer></script>
+
+
+</body>
+
+</html>

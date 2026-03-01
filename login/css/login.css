@@ -1,0 +1,184 @@
+body {
+  background: rgb(226, 20, 175);
+  background: linear-gradient(
+    90deg,
+    rgba(226, 20, 175, 1) 1%,
+    rgba(2, 0, 36, 1) 47%,
+    rgba(93, 29, 208, 1) 100%
+  );
+
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 80vw;
+  height: 100vh;
+  background: rgb(226, 20, 175);
+  background: linear-gradient(
+    135deg,
+    rgba(92, 29, 208, 0.582) 1%,
+    rgba(2, 0, 36, 0.308) 47%,
+    rgba(226, 20, 175, 1) 100%
+  );
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  /* background: rgba(226, 20, 174, 0.466); */
+  background: rgb(226, 20, 175);
+  background: linear-gradient(
+    35deg,
+    rgba(226, 20, 174, 0.445) 1%,
+    rgba(2, 0, 36, 0.548) 47%,
+    rgba(92, 29, 208, 0.336) 100%
+  );
+  border-radius: 30px;
+  width: 30%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.login * {
+  color: white;
+}
+.login p {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.publish {
+  position: relative;
+  height: 70%;
+  width: 95%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.publish div {
+  position: relative;
+  width: 85%;
+  height: 5vh;
+}
+input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-left: 6%;
+  background-color: transparent;
+}
+div .submit {
+  width: 6rem;
+  cursor: pointer;
+  background-color: rgba(0, 247, 255, 0);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit button {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+label {
+  position: absolute;
+  left: 5%;
+  transform: translateY(70%);
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  user-select: none;
+
+  pointer-events: none;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  transform: translateX(-10%) translateY(-10%) scale(0.7);
+  transition: 0.2s;
+  color: #ffffff;
+}
+
+.publish div::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.publish div:hover::after {
+  transition: 0.5s;
+  width: 100%;
+}
+.publish div.submit:hover::after {
+  width: 0;
+}
+.publish div.submit:hover {
+  transform: scale(1.1);
+
+  background: rgba(226, 20, 174, 0.308);
+
+  transition: 0.2s;
+}
+.Sbmit:hover {
+  color: white;
+  transition: 0.2s;
+}
+
+.nopassword {
+  background-color: rgba(255, 255, 255, 0.404);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom: 2px solid rgba(59, 15, 163, 0.548);
+  border-left: 2px solid rgba(59, 15, 163, 0.548);
+  border-right: 2px solid rgba(59, 15, 163, 0.548);
+  width: 15vw;
+  height: 10vh;
+  position: absolute;
+  margin: 0 auto;
+  animation: nopass 1s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nopassword p {
+  color: white;
+}
+
+@keyframes nopass {
+  0% {
+    opacity: 0;
+    margin-top: -100vh;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    opacity: 0;
+    margin-top: -10 vh;
+    animation-timing-function: linear;
+  }
+  70% {
+    opacity: 1;
+    margin-top: 0;
+    animation-timing-function: ease-out;
+  }
+  90% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,172 @@
+.menu_mobile{
+  display: none ;
+}
+.theme_mob{
+  display: none;
+}
+
+.container{
+  background-color: transparent;
+  width: 70vw;
+  height: 95vh;
+  position: relative;
+}
+.container_sector, .container_limbo{
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0);
+  width: 90%;
+  height: 90%;
+  position: relative;
+  top: 4rem;
+
+  display: block;
+
+  
+  
+}
+.elemento{
+
+  margin-top: 2rem;
+
+  background-color: rgba(255, 255, 255, 0);
+
+  width: 100%;
+  height: 10vh;
+  border-radius: 25px;
+  position: relative;
+}
+.delete{
+  background-color: white;
+  
+  border: 1px solid var(--pink);
+  width: 2rem;
+  height: 2rem;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  position: absolute;
+  top: 0;
+  z-index: 2; 
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+.delete a{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.delete:hover{
+  transform: scale(0.9);
+  
+}
+.delete:active{
+  transform: scale(0.7);
+  
+}
+.inside_content{
+  background-color: rgb(255, 255, 255);
+  transition: 0.5s;
+  border: 1px solid var(--pink);
+  position: absolute;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  right: 0;
+  top: 0.5rem;
+  width: 99%;
+  height: 100%;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.2rem;
+
+
+
+}
+.inside_content div{
+  width: 25%;
+  text-align: center;
+}
+.inside_content div.name{
+  width: 40%;
+  text-align: start;
+}
+.inside_content div.data{
+width: 20%;
+}
+.inside_content div.proc{
+width: 20%;
+}
+.inside_content div.cel{
+width: 20%;
+}
+.inside_content div p{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #ff0bff1a;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #62A34B;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #62A34B;
+}
+
+
+a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.Edit i{
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.Edit i:hover{
+  transform: scale(1.1);
+  
+}
+.Edit i:active{
+  transform: scale(0.9);
+
+}
+
+
+
+
+
+.container_limbo{
+  display: none;
+}

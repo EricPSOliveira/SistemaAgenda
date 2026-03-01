@@ -1,0 +1,103 @@
+.theme {
+  background-color: transparent;
+  width: 30%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.light {
+  background-color: transparent;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+transition: 0.5s;
+}
+
+.dark {
+  display: none;
+  border-radius: 50%;
+  position: absolute;
+  background-color: transparent;
+  height: 4rem;
+  width: 4rem;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.light i, .dark i{
+  font-size: 3rem;
+}
+.dark i{
+  animation: moon 3s forwards;
+
+}
+.dark i:hover{
+  animation: moon 4s forwards infinite alternate;
+  
+  cursor: pointer;
+}
+.light i{
+  animation: sun 0.6s forwards;
+  background-color: transparent;
+  filter: invert();
+}
+.light i:hover{
+  animation: sun_hover 4s forwards infinite;
+  
+  cursor: pointer;
+}
+@keyframes sun_hover {
+  from{
+    transition: 0.3s;
+    transform: rotate(90deg) scale(1.1);
+   
+  }
+  30%{
+    transform: rotate(80deg) scale(1);
+  }40%{
+    transform: rotate(90deg) scale(1);
+  } 50%{
+    transform: rotate(80deg) scale(1);
+  } 
+  90%{
+    transform: rotate(90deg) scale(1.1);
+    
+  }
+}
+@keyframes sun{
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-in; /* Rápido no início */
+  }
+  60% {
+    transform: rotate(360deg);
+    animation-timing-function: linear; /* Rotações intermediárias suaves */
+  }
+  90% {
+    transform: rotate(720deg);
+    animation-timing-function: ease-out; /* Finaliza devagar */
+  }
+}
+@keyframes moon{
+  from{
+    transition: 0.3s;
+    transform: rotate(0deg) scale(1.1);
+   
+  }
+  30%{
+    transform: rotate(10deg) scale(1);
+  }40%{
+    transform: rotate(0deg) scale(1);
+  } 50%{
+    transform: rotate(10deg) scale(1);
+  } 
+  90%{
+    transform: rotate(0deg) scale(1.1);
+    
+  }
+}

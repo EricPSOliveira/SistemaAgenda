@@ -1,0 +1,109 @@
+.search {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.733);
+  position: absolute;
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+ 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 7;
+  gap: 2rem;
+}
+.search_tool {
+  position: relative;
+  background-color: white;
+  width: 35%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  transition: 0.4s;
+}
+.search_tool2 {
+  background-color: white;
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+}
+.S_tool{
+  position: relative;
+  width: 85%;
+  height: 90%;
+  border-radius: 25px;
+
+  background-color: white;
+  padding-left: 2rem;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.search_tool .submitter{
+  width: 20%;
+  height: 90%;
+  background-color: rgba(0, 247, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submitter_up{
+  background-color: blanchedalmond;
+
+}
+
+.submitter_up label{
+  position: absolute;
+}
+.search_tool div.submitter i{
+  font-size: 2rem;
+  color: black;
+}
+
+.results {
+  display: none;
+  position: relative;
+  background-color: rgba(146, 37, 37, 0);
+
+  width: 35%;
+  
+  overflow: auto;
+  height: 50%;
+
+  transition: 0.4s;
+  
+
+}
+.elementor{
+  margin-top: 2rem;
+  position: relative;
+  background-color: white;
+  border-radius: 25px;
+  width: 100%;
+  height: 6rem;
+  padding-inline: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--pink);
+  animation: intro 0.4s ease-in-out forwards;
+}
+.inside_contenter{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+@keyframes intro {
+  from{
+    opacity: 0;
+    height: 0;
+  }
+}

@@ -1,0 +1,40 @@
+.edit {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.637);
+  z-index: 8;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.edit_form {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.733);
+  width: 70vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.edit_div{
+  width: 20%;
+  height: 6vh;
+}
+.edit_div input{
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  color: black;
+}
+.edit_submit{
+  width: 4rem;
+  height: 2rem;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+}
+
+.ocult{
+  display: none;
+}

@@ -1,0 +1,222 @@
+@media screen and (max-width: 900px) {
+  body {
+    animation: none;
+  }
+  .theme {
+    display: none;
+  }
+
+  aside {
+    display: none;
+    background-color: var(--pink);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 4;
+    animation: side 0.2s ease-in-out forwards;
+
+    justify-content: center;
+    align-items: center;
+  }
+  .sector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .icons {
+    justify-content: center;
+  }
+  .pesquisar i {
+    font-size: 2rem;
+  }
+  .w {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .sector {
+    gap: 1rem;
+  }
+  @keyframes side {
+    from {
+      margin-left: -100vw;
+    }
+  }
+  @keyframes idde {
+    to {
+      margin-left: -100vw;
+    }
+  }
+
+  #criar {
+    position: relative;
+    background-color: white;
+    border-radius: 25px;
+    padding-left: 2rem;
+    width: 90vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+  }
+  .filter {
+    display: flex;
+    flex-direction: column;
+  }
+  .filtter_mob {
+    position: relative;
+    margin-top: 2rem;
+    width: 70vw;
+    height: 30vh;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid var(--pink);
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+    animation: here 0.5s ease-in-out forwards;
+  }
+
+  .filtter_mob div {
+    display: none;
+    opacity: 0;
+
+    animation: opcinfo 0.2s ease-in-out forwards;
+    font-size: 1.5rem;
+  }
+  @keyframes opcinfo {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes here {
+    from {
+      height: 0;
+    }
+  }
+  @keyframes opcinfo_oposite {
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes here_oposite {
+    to {
+      height: 0;
+    }
+  }
+
+  .menu_mobile {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+  }
+
+  .edit_form {
+    flex-direction: column;
+    background-color: white;
+    height: 60vh;
+    padding: 2rem;
+  }
+  .edit_div {
+    width: 95%;
+  }
+  .menu_mobile i {
+    font-size: 2rem;
+  }
+  .menu_mobile:active {
+    color: white;
+  }
+  .container {
+    position: relative;
+    background-color: white;
+    width: 97vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .container_sector {
+    position: absolute;
+    width: 90%;
+top: 0;
+    align-self: center;
+  }
+  .elemento {
+    height: 20vh;
+  }
+  .inside_content {
+    flex-direction: column;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .inside_content div {
+    width: 100%;
+    text-align: center;
+  }
+  .inside_content div.name {
+    width: 100%;
+    text-align: center;
+  }
+  .inside_content div.data {
+    width: 100%;
+  }
+  .inside_content div.proc {
+    width: 100%;
+  }
+  .inside_content div.cel {
+    width: 100%;
+  }
+  .inside_content div p {
+    font-family: "Times New Roman", Times, serif;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  .search_tool {
+    width: 90%;
+  }
+  .results {
+    width: 90%;
+  }
+  .elementor {
+    margin-top: 2rem;
+    position: relative;
+    background-color: white;
+    border-radius: 25px;
+    width: 100%;
+    height: 8rem;
+    padding-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--pink);
+    animation: intro 0.4s ease-in-out forwards;
+  }
+  .inside_contenter {
+    padding: 1rem 0 1rem 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
